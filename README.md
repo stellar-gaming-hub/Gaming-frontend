@@ -13,13 +13,33 @@ A modern, responsive Next.js and TypeScript Web3 frontend platform for discoveri
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/stellar-gaming-hub/Gaming-frontend/blob/main/LICENSE)
 [![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen.svg)](https://github.com/stellar-gaming-hub/Gaming-frontend)
 [![Drips Protocol](https://img.shields.io/badge/Funding-Drips_Protocol-blue.svg)](https://drips.network)
-[![Node Version](https://img.shields.io/badge/Node-%3E%3D18.0.0-brightgreen.svg)](https://nodejs.org/)
+[![Node Version](https://img.shields.io/badge/Node-%3E%3D20.9.0-brightgreen.svg)](https://nodejs.org/)
 
 ---
 
 ## Description
 
 **Stellar Gaming Hub Frontend** provides an open-source gateway for players to explore web3 titles, track achievement badges, interact with on-chain leaderboards, and stream ERC-20 token rewards directly to game repositories.
+
+---
+
+## Wallet Connection
+
+The home page uses RainbowKit with Wagmi and Viem to provide a wallet connection modal for MetaMask, WalletConnect, and Coinbase Wallet. The app supports Ethereum Mainnet and Sepolia.
+
+Use Node.js 20.9 or later, then configure a WalletConnect project ID from [WalletConnect Cloud](https://cloud.walletconnect.com/) and start the app:
+
+```bash
+npm install
+```
+
+Add the project ID to `.env.local`:
+
+```bash
+NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=your_project_id
+```
+
+Then run `npm run dev` and open `http://localhost:3000`. The project ID is public configuration; never put private keys in client-side environment variables.
 
 ---
 

@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  color-scheme: dark;
+  --ink: #e9f0e9;
+  --muted: #9aa79d;
+  --surface: #111713;
+  --line: #29352d;
+  --acid: #c4f36a;
+}
+
+* { box-sizing: border-box; }
+
+html, body { min-height: 100%; }
+
+body {
+  margin: 0;
+  background-color: var(--surface);
+  background-image: linear-gradient(rgba(185, 225, 163, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(185, 225, 163, .035) 1px, transparent 1px);
+  background-size: 48px 48px;
+  color: var(--ink);
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+button, a { font: inherit; }
+
+.portal {
+  display: flex;
+  min-height: 100svh;
+  flex-direction: column;
+  padding: 0 6vw;
+}
+
+.topbar, .footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 82px;
+  border-bottom: 1px solid var(--line);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .08em;
+}
+
+.wordmark { display: inline-flex; align-items: center; gap: 11px; color: var(--ink); text-decoration: none; font-weight: 500; }
+.wordmark-icon { display: grid; width: 28px; height: 28px; place-items: center; background: var(--acid); color: #172012; font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 700; }
+.wordmark-light, .topbar-label { color: var(--muted); }
+.topbar-label span { margin-left: 12px; color: var(--acid); }
+
+.welcome {
+  width: min(100%, 680px);
+  margin: auto;
+  padding: 84px 0 100px;
+  animation: arrive .55s ease-out both;
+}
+
+.eyebrow { display: flex; align-items: center; gap: 9px; color: var(--acid); font: 11px 'DM Mono', monospace; letter-spacing: .12em; }
+.status-dot, .status-mark { width: 7px; height: 7px; border-radius: 50%; background: var(--acid); }
+
+h1 { margin: 28px 0 18px; font-size: clamp(48px, 8vw, 82px); line-height: .98; letter-spacing: -.045em; }
+.intro { max-width: 430px; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.65; }
+.connect-area { margin-top: 36px; }
+.connect-area button { min-height: 48px; border-radius: 2px !important; font-family: 'Space Grotesk', sans-serif !important; }
+
+.connection-status { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 28px; color: var(--muted); font: 10px 'DM Mono', monospace; letter-spacing: .06em; }
+.status-mark { background: #647168; }
+.status-mark.is-connected { background: var(--acid); box-shadow: 0 0 10px rgba(196, 243, 106, .5); }
+.chain-label { color: var(--ink); }
+
+.footer { min-height: 58px; border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted); font-size: 9px; }
+
+@keyframes arrive { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 520px) {
+  .portal { padding: 0 22px; }
+  .topbar { min-height: 68px; }
+  .topbar-label { font-size: 9px; }
+  .welcome { padding: 68px 0 80px; }
+  .footer { gap: 18px; font-size: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+}
